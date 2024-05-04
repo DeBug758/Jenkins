@@ -11,6 +11,27 @@ pipeline {
             }
             
         }
+
+        stage("test") {
+            
+            steps{
+                echo "test smth"
+            }   
+        }
+
+        stage("Docker build") {
+            
+            steps{
+                echo "Docker smth"
+            }   
+        }
+
+        stage("deploy") {
+            
+            steps{
+                echo "deploy smth"
+            }   
+        }
         
     }
 }
