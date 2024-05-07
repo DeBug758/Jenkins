@@ -22,14 +22,14 @@ pipeline {
         stage("Docker build") {
             
             steps{
-                docker build -t nodemain:v1.0 .
+                sh 'docker build -t nodemain:v1.0 .'
             }   
         }
 
         stage("deploy") {
             
             steps{
-                docker run -d --expose 3000 -p 3000:3000 nodemain:v1.0
+                sh 'docker run -d --expose 3000 -p 3000:3000 nodemain:v1.0'
             }   
         }
         
