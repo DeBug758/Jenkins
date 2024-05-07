@@ -21,7 +21,7 @@ pipeline {
         stage("Docker build") {
             
             steps{
-                docker build -t nodedev:v1.0
+                docker build -t nodedev:v1.0 .
             }   
         }
 
