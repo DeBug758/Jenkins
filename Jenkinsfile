@@ -28,7 +28,7 @@ pipeline {
         stage("deploy") {
             
             steps{
-                sh 'docker remove -f $(docker ps -q  --filter ancestor=nodedev:v1.0)'
+                sh 'docker remove -f $(docker ps -q  --filter ancestor=nodedev:v1.0) 2&>/dev/null'
                 sh 'docker run -d --expose 3001 -p 3001:3000 nodedev:v1.0'
             }   
         }
