@@ -29,7 +29,7 @@ pipeline {
             
             steps{
                 sh 'docker remove -f $(docker ps -q  --filter ancestor=nodedev:v1.0)'
-                sh 'docker run -d -p 3000:3001 nodedev:v1.0'
+                sh 'docker run -d --expose 3001 -p 3001:3000 nodedev:v1.0'
             }   
         }
         
